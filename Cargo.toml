@@ -1,0 +1,22 @@
+[package]
+authors = ["Robert Günzler <r@gnzler.io>"]
+name = "redirsrv"
+version = "0.1.0"
+
+[dependencies]
+clap = "2.29.0"
+failure = "0.1.1"
+failure_derive = "0.1.1"
+hyper = "0.11.9"
+rand = "0.3.18"
+rocket = "0.3.4"
+rocket_codegen = "0.3.4"
+serde = "1.0.24"
+serde_derive = "1.0.24"
+serde_json = "1.0.8"
+url = "1.6.0"
+
+[dependencies.rocket_contrib]
+default-features = false
+features = ["json"]
+version = "*"
