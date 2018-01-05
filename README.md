@@ -24,5 +24,5 @@ $ docker run -d --name redirsrv -v "$(pwd)/linkfile.json:/etc/redirsrv/linkfile.
 Find the API token in the log and you can get started...
 
 ```
-$ http GET :8080/adm/ Authorization:Bearer:<api_token>
+$ http GET :8080/adm Authorization:Bearer:<api_token>
 ```
