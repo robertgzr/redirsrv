@@ -1,0 +1,8 @@
+goos: darwin
+goarch: amd64
+pkg: github.com/robertgzr/rlog
+BenchmarkNoCtx-4        	 2000000	       866 ns/op	     297 B/op	       6 allocs/op
+BenchmarkDiscard-4      	10000000	       129 ns/op	     160 B/op	       2 allocs/op
+BenchmarkWithFields-4   	 1000000	      1284 ns/op	    1892 B/op	      11 allocs/op
+PASS
+ok  	github.com/robertgzr/rlog	5.388s

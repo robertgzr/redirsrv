@@ -1,0 +1,289 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"path": "bufio",
+			"revision": ""
+		},
+		{
+			"path": "bytes",
+			"revision": ""
+		},
+		{
+			"path": "context",
+			"revision": ""
+		},
+		{
+			"path": "encoding",
+			"revision": ""
+		},
+		{
+			"path": "encoding/base64",
+			"revision": ""
+		},
+		{
+			"path": "encoding/csv",
+			"revision": ""
+		},
+		{
+			"path": "encoding/json",
+			"revision": ""
+		},
+		{
+			"path": "errors",
+			"revision": ""
+		},
+		{
+			"path": "fmt",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "4IearLMTAsdyT2kExofJKklO7k4=",
+			"path": "github.com/apex/log",
+			"revision": "ff0f66940b829dc66c81dad34746d4349b83eb9e",
+			"revisionTime": "2018-01-18T05:06:19Z"
+		},
+		{
+			"checksumSHA1": "VsE3zx2d8kpwj97TWhYddzAwBrY=",
+			"path": "github.com/fatih/color",
+			"revision": "507f6050b8568533fb3f5504de8e5205fa62a114",
+			"revisionTime": "2018-02-13T13:34:03Z"
+		},
+		{
+			"checksumSHA1": "SEnjvwVyfuU2xBaOfXfwPD5MZqk=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "efa589957cd060542a26d2dd7832fd6a6c6c3ade",
+			"revisionTime": "2018-03-10T13:32:14Z"
+		},
+		{
+			"checksumSHA1": "w5RcOnfv5YDr3j2bd1YydkPiZx4=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c",
+			"revisionTime": "2017-11-07T05:05:31Z"
+		},
+		{
+			"checksumSHA1": "nf3UoPNBIut7BL9nWE8Fw2X2j+Q=",
+			"path": "github.com/oklog/run",
+			"revision": "6934b124db28979da51d3470dadfa34d73d72652",
+			"revisionTime": "2018-03-08T00:51:04Z"
+		},
+		{
+			"checksumSHA1": "HM0EfqjqAV9L1U6TZV/9x+kpNvA=",
+			"path": "github.com/oklog/ulid",
+			"revision": "7e1bd8a9a281b5abdf651a430b918bb0ecdbceda",
+			"revisionTime": "2018-03-14T17:27:42Z"
+		},
+		{
+			"checksumSHA1": "qF0v8XQ53MGp26VQBaIu1mpfb14=",
+			"path": "github.com/pelletier/go-toml",
+			"revision": "66540cf1fcd2c3aee6f6787dfa32a6ae9a870f12",
+			"revisionTime": "2018-03-23T18:52:43Z"
+		},
+		{
+			"checksumSHA1": "ljd3FhYRJ91cLZz3wsH9BQQ2JbA=",
+			"path": "github.com/pkg/errors",
+			"revision": "816c9085562cd7ee03e7f8188a1cfd942858cded",
+			"revisionTime": "2018-03-11T21:45:15Z"
+		},
+		{
+			"checksumSHA1": "xPDyAOKIqSAXXmWicc8RjhtlkZY=",
+			"path": "github.com/pressly/chi",
+			"revision": "e223a795a06a5598451cf022558c17c779f5a7ab",
+			"revisionTime": "2018-02-02T19:41:35Z"
+		},
+		{
+			"checksumSHA1": "Upb/GqXS/Su3v/dSihFIEiNGPyU=",
+			"path": "github.com/robertgzr/kiwi",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "MDQz+ZLnraGjKW7ndhe37oLfMHU=",
+			"path": "github.com/robertgzr/kiwi/bunt",
+			"revision": ""
+		},
+		{
+			"path": "github.com/robertgzr/redirsrv",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "+YnWQ2v7bQZjRvwHiWfuqoPy9PU=",
+			"path": "github.com/robertgzr/rlog",
+			"revision": "799b8223a6ef18375e30e7626524044a29731d9f",
+			"revisionTime": "2018-03-19T00:04:05Z"
+		},
+		{
+			"checksumSHA1": "9BUUroMrL9oSrfc3W+LTYf6lIkc=",
+			"path": "github.com/stevenroose/gonfig",
+			"revision": "6320c34cbabfd64c514e6003c1fc4df5b5afa5a2",
+			"revisionTime": "2018-03-31T23:30:44Z"
+		},
+		{
+			"checksumSHA1": "dezZFwteKCEvEN0IkR6XSD6qoJU=",
+			"path": "github.com/tidwall/btree",
+			"revision": "9876f1454cf0993a53d74c27196993e345f50dd1",
+			"revisionTime": "2017-01-13T22:41:14Z"
+		},
+		{
+			"checksumSHA1": "jxD5fF+8RuJzLSO0A+mctw8NNu4=",
+			"path": "github.com/tidwall/buntdb",
+			"revision": "2da7c106683f522198cdf55ed8db42b374de50d7",
+			"revisionTime": "2018-01-12T23:41:09Z"
+		},
+		{
+			"checksumSHA1": "S8VWeWhBwjZ4xdd+pPB5Ti/mN6s=",
+			"path": "github.com/tidwall/gjson",
+			"revision": "aff9dcea3c795200e32e0885dc8892a99930e408",
+			"revisionTime": "2018-02-18T17:09:03Z"
+		},
+		{
+			"checksumSHA1": "fB70Sk+JyVkdav2NHeNjG8Z0mkQ=",
+			"path": "github.com/tidwall/grect",
+			"revision": "ba9a043346eba55344e40d66a5e74cfda3a9d293",
+			"revisionTime": "2016-10-06T13:56:19Z"
+		},
+		{
+			"checksumSHA1": "Tk+aXpWRuTQhURlO79bd7YogcU0=",
+			"path": "github.com/tidwall/match",
+			"revision": "1731857f09b1f38450e2c12409748407822dc6be",
+			"revisionTime": "2017-10-02T07:59:45Z"
+		},
+		{
+			"checksumSHA1": "BHGy+qJdNfAF2EXaIFDny7FLnc0=",
+			"path": "github.com/tidwall/rtree",
+			"revision": "6cd427091e0e662cb4f8e2c9eb1a41e1c46ff0d3",
+			"revisionTime": "2018-01-13T14:45:39Z"
+		},
+		{
+			"checksumSHA1": "vd9csMwZcQy0O2k7iZEqImY20os=",
+			"path": "github.com/tidwall/rtree/base",
+			"revision": "6cd427091e0e662cb4f8e2c9eb1a41e1c46ff0d3",
+			"revisionTime": "2018-01-13T14:45:39Z"
+		},
+		{
+			"checksumSHA1": "SgSrGMRPm10KHrUsSlAzlGS/v6E=",
+			"path": "github.com/tidwall/tinyqueue",
+			"revision": "1feaf062ef04a231c9126f99a68eaa579fd0e390",
+			"revisionTime": "2017-05-01T20:16:32Z"
+		},
+		{
+			"checksumSHA1": "uKcsy31MSXXPg5SkDtzm4KAbJ4s=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "2f1e207ee39ff70f3433e49c6eb52677a515e3b5",
+			"revisionTime": "2018-03-15T20:07:22Z"
+		},
+		{
+			"checksumSHA1": "eQq+ZoTWPjyizS9XalhZwfGjQao=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "2f1e207ee39ff70f3433e49c6eb52677a515e3b5",
+			"revisionTime": "2018-03-15T20:07:22Z"
+		},
+		{
+			"checksumSHA1": "AnKBN2Q4AWaSNb0JyINBQbnpxGM=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "7f97868eec74b32b0982dd158a51a446d1da7eb5",
+			"revisionTime": "2018-02-23T19:12:37Z"
+		},
+		{
+			"path": "io",
+			"revision": ""
+		},
+		{
+			"path": "io/ioutil",
+			"revision": ""
+		},
+		{
+			"path": "log",
+			"revision": ""
+		},
+		{
+			"path": "math",
+			"revision": ""
+		},
+		{
+			"path": "math/rand",
+			"revision": ""
+		},
+		{
+			"path": "net",
+			"revision": ""
+		},
+		{
+			"path": "net/http",
+			"revision": ""
+		},
+		{
+			"path": "os",
+			"revision": ""
+		},
+		{
+			"path": "os/signal",
+			"revision": ""
+		},
+		{
+			"path": "path",
+			"revision": ""
+		},
+		{
+			"path": "path/filepath",
+			"revision": ""
+		},
+		{
+			"path": "reflect",
+			"revision": ""
+		},
+		{
+			"path": "regexp",
+			"revision": ""
+		},
+		{
+			"path": "runtime",
+			"revision": ""
+		},
+		{
+			"path": "sort",
+			"revision": ""
+		},
+		{
+			"path": "strconv",
+			"revision": ""
+		},
+		{
+			"path": "strings",
+			"revision": ""
+		},
+		{
+			"path": "sync",
+			"revision": ""
+		},
+		{
+			"path": "sync/atomic",
+			"revision": ""
+		},
+		{
+			"path": "syscall",
+			"revision": ""
+		},
+		{
+			"path": "time",
+			"revision": ""
+		},
+		{
+			"path": "unicode",
+			"revision": ""
+		},
+		{
+			"path": "unicode/utf16",
+			"revision": ""
+		},
+		{
+			"path": "unicode/utf8",
+			"revision": ""
+		},
+		{
+			"path": "unsafe",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/robertgzr/redirsrv"
+}
