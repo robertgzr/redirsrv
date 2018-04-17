@@ -145,7 +145,7 @@ func writeHelpMessage(s *setup, w io.Writer) {
 		if opt.isParent {
 			continue
 		}
-		if opt.idopts.Contains(optionNoHelp) {
+		if opt.hasFieldOpt(fieldOptHidden) {
 			continue
 		}
 

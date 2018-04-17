@@ -17,10 +17,11 @@ const ( // The values for the struct field tags that we use.
 	fieldTagShort       = "short"
 	fieldTagDefault     = "default"
 	fieldTagDescription = "desc"
+	fieldTagOpts        = "opts"
 )
 
-const ( // The values for the struct tag options
-	optionNoHelp = "nohelp"
+const ( // The values for the struct tag options.
+	fieldOptHidden = "hidden"
 )
 
 var ( // Some type variables for comparison.
@@ -42,39 +43,27 @@ type option struct {
 	isMap        bool          // is a map type
 
 	// Struct metadata specified by user.
-	id     string // the identifier
-	short  string // the shorthand to be used in CLI flags
-	defaul string // the default value
-	desc   string // the description
-
-	idopts idOptions
-}
-
-type idOptions string
-
-func (o idOptions) Contains(optionName string) bool {
-	if len(o) == 0 {
-		return false
-	}
-	s := string(o)
-	for s != "" {
-		var next string
-		i := strings.Index(s, ",")
-		if i >= 0 {
-			s, next = s[:i], s[i+1:]
-		}
-		if s == optionName {
-			return true
-		}
-		s = next
-	}
-	return false
+	id     string   // the identifier
+	short  string   // the shorthand to be used in CLI flags
+	defaul string   // the default value
+	desc   string   // the description
+	opts   []string // the field opts flags
 }
 
 // fullID returns the full ID of the option consisting of all IDs of its parents
 // joined by dots.
 func (o option) fullID() string {
 	return strings.Join(o.fullIDParts, ".")
+}
+
+// hasFieldOpt returns whether the given opt flag is set.
+func (o option) hasFieldOpt(opt string) bool {
+	for _, op := range o.opts {
+		if op == opt {
+			return true
+		}
+	}
+	return false
 }
 
 // optionFromField creates a new option from the field information.
@@ -85,24 +74,20 @@ func optionFromField(f reflect.StructField, parent *option) *option {
 	if len(id) == 0 {
 		id = strings.ToLower(f.Name)
 	}
-
-	if idx := strings.Index(id, ","); idx != -1 {
-		opt.id = id[:idx]
-		opt.idopts = idOptions(id[idx+1:])
-	} else {
-		opt.id = id
-		opt.idopts = ""
-	}
+	opt.id = id
 
 	if parent == nil {
-		opt.fullIDParts = []string{opt.id}
+		opt.fullIDParts = []string{id}
 	} else {
-		opt.fullIDParts = append(parent.fullIDParts, opt.id)
+		opt.fullIDParts = append(parent.fullIDParts, id)
 	}
 
 	opt.short = f.Tag.Get(fieldTagShort)
 	opt.defaul, opt.defaultSet = f.Tag.Lookup(fieldTagDefault)
 	opt.desc = f.Tag.Get(fieldTagDescription)
+	if opts, any := f.Tag.Lookup(fieldTagOpts); any {
+		opt.opts = strings.Split(opts, ",")
+	}
 
 	return opt
 }
@@ -180,7 +165,7 @@ func createOptionsFromStruct(v reflect.Value, parent *option) ([]*option, []*opt
 			if i != j {
 				if opts[i].id == opts[j].id {
 					return nil, nil, errors.New(
-						"duplicate config variable: " + opts[i].id)
+						"duplicate config variable: \"" + opts[i].id + "\"")
 				}
 			}
 		}

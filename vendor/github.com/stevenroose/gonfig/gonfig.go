@@ -166,11 +166,12 @@ func setDefaults(s *setup) error {
 // an error instead if the user provided incorrect values.
 //
 // The recognised tags on the exported struct variables are:
-//  - id: the keyword identifier (defaults to lowercase of variable name),
-//    setting `id:",nohelp"` will hide the entry from the help output
+//  - id: the keyword identifier (defaults to lowercase of variable name)
 //  - default: the default value of the variable
 //  - short: the shorthand used for command line flags (like -h)
 //  - desc: the description of the config var, used in --help
+//  - opts: comma-separated flags.  Supported flags are:
+//     - hidden: Hides the option from help outputs.
 func Load(c interface{}, conf Conf) error {
 	s := &setup{
 		conf: &conf,

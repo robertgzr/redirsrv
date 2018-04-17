@@ -51,6 +51,12 @@
 			"revisionTime": "2018-02-13T13:34:03Z"
 		},
 		{
+			"checksumSHA1": "YODbzvhUr0Tzp2/MkXflXph2hdY=",
+			"path": "github.com/go-chi/chi",
+			"revision": "e223a795a06a5598451cf022558c17c779f5a7ab",
+			"revisionTime": "2018-02-02T19:41:35Z"
+		},
+		{
 			"checksumSHA1": "SEnjvwVyfuU2xBaOfXfwPD5MZqk=",
 			"path": "github.com/mattn/go-colorable",
 			"revision": "efa589957cd060542a26d2dd7832fd6a6c6c3ade",
@@ -87,12 +93,6 @@
 			"revisionTime": "2018-03-11T21:45:15Z"
 		},
 		{
-			"checksumSHA1": "xPDyAOKIqSAXXmWicc8RjhtlkZY=",
-			"path": "github.com/pressly/chi",
-			"revision": "e223a795a06a5598451cf022558c17c779f5a7ab",
-			"revisionTime": "2018-02-02T19:41:35Z"
-		},
-		{
 			"checksumSHA1": "Upb/GqXS/Su3v/dSihFIEiNGPyU=",
 			"path": "github.com/robertgzr/kiwi",
 			"revision": ""
@@ -113,9 +113,9 @@
 			"revisionTime": "2018-03-19T00:04:05Z"
 		},
 		{
-			"checksumSHA1": "9BUUroMrL9oSrfc3W+LTYf6lIkc=",
+			"checksumSHA1": "jGc6moAgD1C+uMovnx0rML/SNbM=",
 			"path": "github.com/stevenroose/gonfig",
-			"revision": "6320c34cbabfd64c514e6003c1fc4df5b5afa5a2",
+			"revision": "d25a52c718bdbc7979c39dad4fd115b3a6ad528d",
 			"revisionTime": "2018-03-31T23:30:44Z"
 		},
 		{
