@@ -3,18 +3,18 @@
 FROM golang:alpine AS builder
 ADD . /go/src/redirsrv
 RUN cd /go/src/redirsrv && \
-    go install -ldflags="-s"
+    CGO_ENABLED=0 go install -ldflags="-s"
 
 # and the deploy container
 FROM scratch
 
 COPY --from=builder \
     /go/bin/redirsrv \
-    /redirsrv
+    /bin/redirsrv
 
 ENV GO_LOG "info"
 EXPOSE 8080
-VOLUME /linkfile.toml
+VOLUME /usr/share
 
-ENTRYPOINT ["/redirsrv"]
+ENTRYPOINT ["/bin/redirsrv"]
 CMD ["--host", "0.0.0.0", "--port", "8080"]
