@@ -14,7 +14,7 @@ func redirHandler(w http.ResponseWriter, r *http.Request) {
 	key := chi.URLParam(r, redirKey)
 	if key == "" {
 		log.Warn("no key found")
-		http.Error(w, internalerror, http.StatusInternalServerError)
+		http.Error(w, txt(internalerror, cfg), http.StatusInternalServerError)
 		return
 	}
 
@@ -28,7 +28,7 @@ func redirHandler(w http.ResponseWriter, r *http.Request) {
 			notFoundHandler(w, r)
 			return
 		}
-		http.Error(w, internalerror, http.StatusInternalServerError)
+		http.Error(w, txt(internalerror, cfg), http.StatusInternalServerError)
 		return
 	}
 

@@ -35,14 +35,14 @@ func (a *authbearer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	auth := r.Header.Get("Authorization")
 	if auth == "" {
 		log.Warn("unauthorized")
-		http.Error(w, forbidden, http.StatusForbidden)
+		http.Error(w, txt(forbidden, cfg), http.StatusForbidden)
 		return
 	}
 
 	idx := strings.Index(auth, ":")
 	if idx == -1 {
 		log.Warn("unauthorized")
-		http.Error(w, forbidden, http.StatusForbidden)
+		http.Error(w, txt(forbidden, cfg), http.StatusForbidden)
 		return
 	}
 
@@ -51,7 +51,7 @@ func (a *authbearer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	if a.tok != bearerToken {
 		log.Warn("unauthorized")
-		http.Error(w, forbidden, http.StatusForbidden)
+		http.Error(w, txt(forbidden, cfg), http.StatusForbidden)
 		return
 	}
 

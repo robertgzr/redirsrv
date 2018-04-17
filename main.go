@@ -18,31 +18,6 @@ import (
 	"github.com/robertgzr/rlog"
 )
 
-const (
-	index = `
-    WHAT IS THIS?
-    a really simple redirection service
-
-    WHAT CAN IT DO?
-    if your're authorized, query /adm?bucket=redirs for all available routes
-	`
-	forbidden = `
-    UNAUTHORIZED ACCESS!
-    request assistance / access at r@gnzler.io
-	`
-	notfound = `
-    ROUTE NOT FOUND!
-    seems you've tried to access an invalid route
-
-    BUT THIS SHOULD WORK!?
-    if you think this is a mistake, contact me at r@gnzler.io
-	`
-	internalerror = `
-    INTERNAL ERROR :(
-    oops this was not supposed to happen, tell me about it at r@gnzler.io
-	`
-)
-
 var (
 	db kiwi.Client
 )
@@ -122,9 +97,9 @@ func main() {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(200)
-	w.Write([]byte(index))
+	w.Write([]byte(txt(index, cfg)))
 }
 
 func notFoundHandler(w http.ResponseWriter, _ *http.Request) {
-	http.Error(w, notfound, http.StatusNotFound)
+	http.Error(w, txt(notfound, cfg), http.StatusNotFound)
 }

@@ -18,6 +18,7 @@ type Config struct {
 	Port               int    `id:"port" desc:"port to bind to" default:"8000"`
 
 	Routes map[string]interface{} `opts:"hidden"`
+	Email  string                 `opts:"hidden"`
 }
 
 func (cfg *Config) init() {

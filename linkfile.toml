@@ -1,2 +1,4 @@
+email = "me@example.com"
+
 [routes]
 "example" = "https://example.com"
