@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/apex/log"
-	"github.com/pressly/chi"
+	"github.com/go-chi/chi"
 	"github.com/robertgzr/kiwi"
 )
 
@@ -13,6 +13,7 @@ const redirKey = "redirkey"
 func redirHandler(w http.ResponseWriter, r *http.Request) {
 	key := chi.URLParam(r, redirKey)
 	if key == "" {
+		log.Warn("no key found")
 		http.Error(w, internalerror, http.StatusInternalServerError)
 		return
 	}
@@ -24,7 +25,7 @@ func redirHandler(w http.ResponseWriter, r *http.Request) {
 		log.WithError(err).Error("storage error")
 
 		if kiwi.IsNotFound(err) {
-			http.Error(w, notfound, http.StatusNotFound)
+			notFoundHandler(w, r)
 			return
 		}
 		http.Error(w, internalerror, http.StatusInternalServerError)

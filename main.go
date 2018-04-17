@@ -9,9 +9,9 @@ import (
 	"syscall"
 
 	"github.com/apex/log"
+	"github.com/go-chi/chi"
 	"github.com/oklog/run"
 	"github.com/pkg/errors"
-	"github.com/pressly/chi"
 
 	"github.com/robertgzr/kiwi"
 	"github.com/robertgzr/kiwi/bunt"
@@ -44,9 +44,6 @@ const (
 )
 
 var (
-	host = "localhost"
-	port = 8080
-
 	db kiwi.Client
 )
 
@@ -62,8 +59,11 @@ func main() {
 	cfg.init()
 
 	r := chi.NewRouter()
+	// r.Use(middleware.DefaultLogger)
+	r.NotFound(notFoundHandler)
+
 	r.Get("/", indexHandler)
-	r.Get("/:"+redirKey, redirHandler)
+	r.Get("/{"+redirKey+"}", redirHandler)
 
 	bearerToken := NowULID().String()
 	log.WithField("bearer", bearerToken).Info("token for API auth")
@@ -123,4 +123,8 @@ func main() {
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(200)
 	w.Write([]byte(index))
+}
+
+func notFoundHandler(w http.ResponseWriter, _ *http.Request) {
+	http.Error(w, notfound, http.StatusNotFound)
 }

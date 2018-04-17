@@ -12,15 +12,17 @@ import (
 var cfg Config
 
 type Config struct {
-	LegacyLinkfilePath string                 `id:"legacy-linkfile"`
-	Routes             map[string]interface{} `id:",nohelp"`
+	LegacyLinkfilePath string `id:"legacy-linkfile" desc:"load routes from a JSON linkfile"`
+	Linkfile           string `id:"linkfile" desc:"load routes from a TOML linkfile"`
+	Host               string `id:"host" desc:"host to bind to" default:"0.0.0.0"`
+	Port               int    `id:"port" desc:"port to bind to" default:"8000"`
 
-	Host string `desc:"host to bind to" default:"localhost"`
-	Port int    `desc:"port to bind to" default:"8000"`
+	Routes map[string]interface{} `opts:"hidden"`
 }
 
 func (cfg *Config) init() {
 	if err := gonfig.Load(cfg, gonfig.Conf{
+		ConfigFileVariable:  "linkfile",
 		FileDefaultFilename: "linkfile.toml",
 		FileDecoder:         gonfig.DecoderTOML,
 	}); err != nil {
