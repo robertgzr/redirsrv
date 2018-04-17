@@ -12,9 +12,11 @@ COPY --from=builder \
     /go/bin/redirsrv \
     /bin/redirsrv
 
+ADD ./linkfile.toml /usr/share/linkfile.toml
+
 ENV GO_LOG "info"
 EXPOSE 8080
 VOLUME /usr/share
 
 ENTRYPOINT ["/bin/redirsrv"]
-CMD ["--host", "0.0.0.0", "--port", "8080"]
+CMD ["--host", "0.0.0.0", "--port", "8080", "--linkfile", "/usr/share/linkfile.toml"]
